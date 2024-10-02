@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Resultado Maratona Python</title>
+</head>
+<body>
+    <header>
+        <h1>Maratona job scrapping</h1>
+        <div>
+            <p>Vagas de <strong>{{keyword}} </strong>{{keyword}}</p>
+            <a href="/download/result">Baixar resultados em csv</a>
+        </div>
+    </header>
+<main>
+{% for job in jobs%}
+    <div>
+        <div>
+            <h3>{{job.Title}}</h3>
+            <h4>{{job.Company}}</h4>
+            <p><strong>Localização:</strong>{{job.Location}}</p>
+            <p><strong>Faltam:</strong>{{job.Tempo}}</p>
+            <a href="{{job.Link}}" target="_blank"> Aplicar para vaga</a>
+        </div>
+    </div>
+    <hr />        
+{% endfor %}
+</main>    
+</body>
+</html>
